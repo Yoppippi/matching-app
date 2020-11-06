@@ -1,0 +1,25 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <%= link_to 'MyColor', "/", class: "title" %>
+    <div class='nav'>
+    <ul class='lists-right'>
+      <li><%= link_to 'Mycolorとは', "#", class: "info" %></li>
+      <li><%= link_to 'イベント', "#", class: "info" %></li>
+      <li><%= link_to '新着情報', "#", class: "info" %></li>
+      <li><%= link_to 'Q&A', "#", class: "info" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.name, "#", class: "lists curr-name" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "lists logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "lists login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "lists sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <button class="mobile-menu-icon"
+    onclick="document.querySelector('header').classList.toggle('menu-open');">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
