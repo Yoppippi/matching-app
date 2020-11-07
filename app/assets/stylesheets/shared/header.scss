@@ -9,10 +9,10 @@ header {
   height: 90px;
   background-color: white;
   align-items: center;
-  border-bottom: black 4px solid;
+  border-bottom: #5B5041 4px solid;
   position: fixed;
   margin-top: 0;
-  z-index: 1;
+  z-index: 9999;
 }
  
 .title {
@@ -104,7 +104,7 @@ header {
 }
 
 .menu-open {
-
+  // background-color: black;
 
   & .mobile-menu-icon {
       & > span {

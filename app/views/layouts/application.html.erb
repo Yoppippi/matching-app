@@ -7,9 +7,43 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   </head>
 
   <body>
     <%= yield %>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    let mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  loop: true,
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  effect: 'slide',
+  centeredSlides: true,
+  slidesPerView: 2,
+  speed: 500,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+})
+    </script>
   </body>
 </html>
