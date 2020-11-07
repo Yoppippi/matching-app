@@ -25,16 +25,66 @@
 
 .index-info {
   height: 300px;
-  background-color: seashell;
   width: 100%;
 }
 
 .info-box {
   margin: 0 auto;
   margin-top: 30px;
-  background-color: gold;
   height: 90%;
   width: 80%;
+  display: flex;
+  border: solid 2px rgb(153, 152, 152);
+  border-radius: 20px;
+}
+
+.left-info {
+  width: 20%;
+  height: 73%;
+  margin-top: 40px;
+  text-align: center;
+  // background-color: gray;
+  border-right: rgb(153, 152, 152) 2px solid;
+  
+
+  & p {
+    font-size: 25px;
+    text-align: center;
+    margin: 34% 0;
+    color: rgb(61, 60, 60);
+  }
+}
+
+.right-info {
+  width: 80%;
+  height: 100%;
+  margin-top: 15px;
+  // background-color: gainsboro;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border-bottom: 1px solid black;
+  font-size: 23px;
+  color: rgb(61, 60, 60);
+  padding: 10px;
+  // width: 400px;
+  margin: 20px 0 0 25px;
+}
+
+.td-valu {
+  // margin-left: 50px;
+  text-align: left;
+  padding-right: 100px;
+}
+
+table {
+  overflow: scroll;
+  height: 10px;
+}
+
+td {
+  text-align: center;
 }
 
 .wrapper {
@@ -51,7 +101,7 @@
 
 .left-cont {
   height: 100%;
-  background-color:yellowgreen;
+  background-color:rgb(225, 243, 189);
   width: 80%;
 }
 
@@ -62,7 +112,7 @@
   flex-wrap: wrap;
 
   & div {
-    background-color: sienna;
+    background-color: rgb(206, 236, 248);
     height: 30%;
     width: 45%;
     margin: 10px auto;
@@ -79,7 +129,7 @@
 
 .right-cont {
   height: 100%;
-  background-color:yellowgreen;
+  background-color:rgb(225, 243, 189);
   width: 80%;
 }
 
