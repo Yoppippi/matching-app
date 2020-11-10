@@ -8,7 +8,7 @@
       <li><%= link_to '新着情報', "#", class: "info" %></li>
       <li><%= link_to 'Q&A', "#", class: "info" %></li>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.name, "#", class: "lists curr-name" %></li>
+        <li><%= link_to current_user.name, edit_user_path(current_user), class: "lists curr-name" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "lists logout" %></li>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "lists login" %></li>

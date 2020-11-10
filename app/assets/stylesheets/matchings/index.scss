@@ -1,6 +1,6 @@
 .main {
   background-color: white;
-  height: 200vh;
+  height: 250vh;
   background-color: rgb(255, 253, 249);
 }
 
@@ -85,6 +85,21 @@ table {
 
 td {
   text-align: center;
+}
+
+.character {
+  height: 300px;
+  width: 100%;
+  background-color: thistle;
+  margin-bottom: 20px;
+  // margin: 5%;
+}
+
+.chara-box {
+  width: 80%;
+  height: 80%;
+  background-color: tomato;
+  margin: 0px auto;
 }
 
 .wrapper {
