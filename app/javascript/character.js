@@ -175,7 +175,7 @@ function character() {
                                   神経質傾向: ${nervousScore} / 10 </br>
                                   誠実性: ${honestyScore} / 10 </br>
                                   調和性: ${harmonyScore} / 15 </br>
-                                  開放性: ${opennessScore} / 15 </br>`;
+                                  挑戦力: ${opennessScore} / 15 </br>`;
           extra.setAttribute("value", extraScore)
           nervous.setAttribute("value", nervousScore) 
           honesty.setAttribute("value", honestyScore) 

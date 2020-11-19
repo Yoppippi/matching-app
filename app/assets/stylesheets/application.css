@@ -18,3 +18,8 @@
   box-sizing: border-box;
   font-family: serif;
 }
+
+.error-message {
+  color: rgb(247, 62, 62);
+  margin-bottom: 2px;
+}

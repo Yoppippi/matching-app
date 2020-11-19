@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_091245) do
     t.string "novel", null: false
     t.string "comic", null: false
     t.string "movie", null: false
-    t.string "game", null: false
+    t.string "music", null: false
     t.string "hobby", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

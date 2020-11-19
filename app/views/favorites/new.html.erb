@@ -1,17 +1,21 @@
 <div class="favo-container">
   <div class='favo-main'>
     <%= form_with url: favorites_path, local: true do |f| %>
-      <p>好きな小説</p>
-      <%= f.text_field :novel, class:"novel-name" %>
-      <p>好きな漫画</p>
-      <%= f.text_field :comic, class:"comic-name" %>
-      <p>好きな映画</p>
-      <%= f.text_field :movie, class:"movie-name" %>
-      <p>好きなゲーム</p>
-      <%= f.text_field :game, class:"game-name" %>
-      <p>好きな趣味</p>
-      <%= f.text_field :hobby, class:"hobby-name" %>
-      <%= f.submit "送信する", id: "favo-btn" %>
+
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <p>好きな小説を教えてください</p>
+      <p>※ない場合は「特になし」と記入してください</p>
+      <%= f.text_field :novel, class:"novel-name favo-name" %>
+      <p>好きな漫画を教えてください</p>
+      <%= f.text_field :comic, class:"comic-name favo-name" %>
+      <p>好きな映画を教えてください</p>
+      <%= f.text_field :movie, class:"movie-name favo-name" %>
+      <p>好きな音楽を教えてください</p>
+      <%= f.text_field :music, class:"music-name favo-name" %>
+      <p>趣味を教えてください</p>
+      <%= f.text_field :hobby, class:"hobby-name favo-name" %>
+      <%= f.submit "送信する", class: "favo-btn" %>
     <% end %>
   </div>
 </div>

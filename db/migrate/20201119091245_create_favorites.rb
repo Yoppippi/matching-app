@@ -5,7 +5,7 @@ class CreateFavorites < ActiveRecord::Migration[6.0]
       t.string     :novel,            null: false
       t.string     :comic,            null: false
       t.string     :movie,            null: false
-      t.string     :game,             null: false
+      t.string     :music,            null: false
       t.string     :hobby,            null: false
       t.timestamps
     end
