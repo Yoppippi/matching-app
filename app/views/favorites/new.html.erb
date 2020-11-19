@@ -1,0 +1,17 @@
+<div class="favo-container">
+  <div class='favo-main'>
+    <%= form_with url: favorites_path, local: true do |f| %>
+      <p>好きな小説</p>
+      <%= f.text_field :novel, class:"novel-name" %>
+      <p>好きな漫画</p>
+      <%= f.text_field :comic, class:"comic-name" %>
+      <p>好きな映画</p>
+      <%= f.text_field :movie, class:"movie-name" %>
+      <p>好きなゲーム</p>
+      <%= f.text_field :game, class:"game-name" %>
+      <p>好きな趣味</p>
+      <%= f.text_field :hobby, class:"hobby-name" %>
+      <%= f.submit "送信する", id: "favo-btn" %>
+    <% end %>
+  </div>
+</div>

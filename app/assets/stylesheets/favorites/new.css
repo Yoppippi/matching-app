@@ -1,0 +1,18 @@
+.favo-container {
+  background: rgb(235, 234, 234);
+  height: 100vh;
+}
+
+.favo-main {
+  width: 550px;
+  height: 90%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5%;
+  padding: 45px;
+  position: relative;
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+}

@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+
   def index
   end
 
@@ -12,7 +13,7 @@ class FavoritesController < ApplicationController
   end
 
 private
-  def character_params
+  def favorite_params
     params.permit(:novel, :comic, :movie, :game, :hobby).merge(user_id: current_user.id)
   end
 end
