@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "matchings#index"
   resources :users
   resources :characters
+  resources :favorites
 end
