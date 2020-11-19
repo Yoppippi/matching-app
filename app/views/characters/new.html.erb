@@ -1,1 +1,22 @@
-<h1>hello world</h1>
+<div class="character-test">
+  <section class="container-test">
+    <p id="current"></p>
+    <p id="question"></p>
+    <ul id="choices"></ul>
+
+    <section id="result" class="hidden">
+      <p></p>
+      <%# <a href="">結果を保存する</a> %>
+      <%= form_with url: characters_path, local: true do |f| %>
+        <%= f.text_field :extra, id: "extra", type: "hidden" %>
+        <%= f.text_field :nervous, id: "nervous", type: "hidden"%>
+        <%= f.text_field :honesty, id: "honesty", type: "hidden" %>
+        <%= f.text_field :harmony, id: "harmony", type: "hidden" %>
+        <%= f.text_field :openness, id: "openness", type: "hidden" %>
+        <%= f.submit "記録を保存する", id: "result-btn" %>
+      <% end %>
+    </section>
+  </section>
+
+  <script src="main.js"></script>
+</div>
