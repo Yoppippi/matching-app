@@ -70,6 +70,7 @@
       <%= link_to 'スタート', new_favorite_path, class: "" ,data: {"turbolinks" => false} %>
     </div>
   </div>
+  <% if user_signed_in? %>
   <div class="wrapper">
     <div class='left-bar'>
       <div class='left-cont'>
@@ -105,6 +106,43 @@
       </div>
     </div>
   </div>
+  <% else %>
+  <div class="wrapper">
+    <div class='perso-label'>
+      <p class='plz-login'>ログインして全ての機能を開放しよう！
+    </div>
+    <div class='left-bar'>
+      <div class='left-cont'>
+
+      </div>
+    </div>
+    <div class="personality">
+      <div class="box-1">
+        <p>あなたにおすすめの小説</p>
+      </div>
+      <div class="box-2">
+        <p>あなたにおすすめの漫画</p>
+      </div>
+      <div class="box-3">
+        <p>あなたにおすすめの映画</p>
+      </div>
+      <div class="box-4">
+        <p>あなたにおすすめの音楽</p>
+      </div>
+      <div class="box-5">
+        <p>あなたにおすすめの趣味</p>
+      </div>
+      <div class="box-6">
+
+      </div>
+    </div>
+    <div class="right-bar">
+      <div class='right-cont'>
+
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>
 
 <%= render "shared/footer" %>

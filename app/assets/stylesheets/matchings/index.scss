@@ -104,6 +104,22 @@ td {
 
 .wrapper {
   display: flex;
+  position: relative;
+}
+
+.perso-label {
+  position: absolute;
+  top: 25%;
+  height: 300px;
+  width: 100%;
+  background-color: rgb(96, 176, 179);
+}
+
+.plz-login {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 120px;
 }
 
 .left-bar {
