@@ -3,10 +3,10 @@ class MatchingsController < ApplicationController
 
   def index
     if user_signed_in?
-      user = User.find(current_user.id)
-      if Character.exists?(user_id: user.id) && Favorite.exists?(user_id: user.id)
-        curr_chara = Character.find_by(user_id: user.id)
-        
+      @user = User.find(current_user.id)
+      if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id)
+        curr_chara = Character.find_by(user_id: @user.id)
+
         chara_all = Character.all
         chara_match = []
         chara_all.each do |chara|
@@ -18,14 +18,12 @@ class MatchingsController < ApplicationController
               chara_match << chara
           end
         end
-      
+
         @favo_match = []
         chara_match.each do |chara|
-          @favo_match << Favorite.where(user_id: chara.user_id)
+          @favo_match << Favorite.find_by(user_id: chara.user_id)
         end
-      
-        
-      
+
         @character = Character.where(extra: curr_chara.extra)
         @favorite = Favorite.all
       end
