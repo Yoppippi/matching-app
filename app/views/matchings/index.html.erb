@@ -81,16 +81,16 @@
       <div class="box-1">
         <p>あなたにおすすめの小説</p>
         <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
-          <% @favorite.each do |favorite| %>
-            「<%= favorite.novel%>」
+          <% @favo_match.each do |favo| %>
+            「<%= favo.novel %>」
           <% end %>
         <% end %>
       </div>
       <div class="box-2">
         <p>あなたにおすすめの漫画</p>
         <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
-          <% @character.each do |character| %>
-            「<%= character.extra%>」
+          <% @favo_match.each do |favo| %>
+            「<%= favo.comic %>」
           <% end %>
         <% end %>
       </div>
@@ -104,9 +104,19 @@
       </div>
       <div class="box-4">
         <p>あなたにおすすめの音楽</p>
+        <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
+          <% @favo_match.each do |favo| %>
+            「<%= favo.music %>」
+          <% end %>
+        <% end %>
       </div>
       <div class="box-5">
         <p>あなたにおすすめの趣味</p>
+        <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
+          <% @favo_match.each do |favo| %>
+            「<%= favo.hobby %>」
+          <% end %>
+        <% end %>
       </div>
       <div class="box-6">
 
