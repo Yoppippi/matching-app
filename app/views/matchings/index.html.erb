@@ -80,8 +80,10 @@
     <div class="personality">
       <div class="box-1">
         <p>あなたにおすすめの小説</p>
+        <% if Character.exists?(user_id: user.id) && Favorite.exists?(user_id: user.id) %>
         <% @favorite.each do |favorite| %>
           「<%= favorite.novel%>」
+        <% end %>
         <% end %>
       </div>
       <div class="box-2">
@@ -92,6 +94,9 @@
       </div>
       <div class="box-3">
         <p>あなたにおすすめの映画</p>
+        <% @favo_match.each do |favo| %>
+          「<%= favo.novel%>」
+        <% end %>
       </div>
       <div class="box-4">
         <p>あなたにおすすめの音楽</p>
