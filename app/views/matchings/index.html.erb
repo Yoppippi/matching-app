@@ -81,11 +81,14 @@
       <div class="box-1">
         <p>あなたにおすすめの小説</p>
         <% @favorite.each do |favorite| %>
-          <%= favorite.novel%>
+          「<%= favorite.novel%>」
         <% end %>
       </div>
       <div class="box-2">
         <p>あなたにおすすめの漫画</p>
+        <% @character.each do |character| %>
+          「<%= character.extra%>」
+        <% end %>
       </div>
       <div class="box-3">
         <p>あなたにおすすめの映画</p>
