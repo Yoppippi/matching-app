@@ -64,10 +64,10 @@
   </div>
   <div class='character'>
     <div class="chara-box">
-      <p>簡単な質問に答えて、自分と似ている仲間を見つけよう！</p>
-      <%= link_to 'スタート', new_character_path, class: "" ,data: {"turbolinks" => false} %>
-      <p>あなたの好きなものについて聞かせてください！</p>
-      <%= link_to 'スタート', new_favorite_path, class: "" ,data: {"turbolinks" => false} %>
+      <p class='kantan'>簡単な質問に答えて、自分と似ている仲間を見つけよう！</p>
+      <%= link_to 'スタート', new_character_path, class: "kan-btn sin-btn" ,data: {"turbolinks" => false} %>
+      <p class='sukina'>あなたの好きなものについて聞かせてください！</p>
+      <%= link_to 'スタート', new_favorite_path, class: "suk-btn sin-btn" ,data: {"turbolinks" => false} %>
     </div>
   </div>
   <% if user_signed_in? %>
@@ -79,42 +79,82 @@
     </div>
     <div class="personality">
       <div class="box-1">
-        <p>あなたにおすすめの小説</p>
+        <p class="per-title">あなたにおすすめの小説</p>
         <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
           <% @favo_match.each do |favo| %>
-            「<%= favo.novel %>」
+            <% if favo.novel == "特になし"%>
+              <% favo.novel = "" %>
+            <% else %>
+              <% favo.novel = "『#{favo.novel}』"%>
+            <% end %>
+            <% if favo.user_id == @user.id %>
+              <% favo.novel = "" %>
+            <% end %>
+            <p><%= favo.novel %></p>
           <% end %>
         <% end %>
       </div>
       <div class="box-2">
-        <p>あなたにおすすめの漫画</p>
+        <p class="per-title">あなたにおすすめの漫画</p>
         <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
           <% @favo_match.each do |favo| %>
-            「<%= favo.comic %>」
+            <% if favo.comic == "特になし"%>
+              <% favo.comic = "" %>
+            <% else %>
+              <% favo.comic = "『#{favo.comic}』"%>
+            <% end %>
+            <% if favo.user_id == @user.id %>
+              <% favo.comic = "" %>
+            <% end %>
+            <p><%= favo.comic %></p>
           <% end %>
         <% end %>
       </div>
       <div class="box-3">
-        <p>あなたにおすすめの映画</p>
+        <p class="per-title">あなたにおすすめの映画</p>
         <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
           <% @favo_match.each do |favo| %>
-            「<%= favo.movie %>」
+            <% if favo.movie == "特になし"%>
+              <% favo.movie = "" %>
+            <% else %>
+              <% favo.movie = "『#{favo.movie}』"%>
+            <% end %>
+            <% if favo.user_id == @user.id %>
+              <% favo.movie = "" %>
+            <% end %>
+            <p><%= favo.movie %></p>
           <% end %>
         <% end %>
       </div>
       <div class="box-4">
-        <p>あなたにおすすめの音楽</p>
+        <p class="per-title">あなたにおすすめの音楽</p>
         <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
           <% @favo_match.each do |favo| %>
-            「<%= favo.music %>」
+            <% if favo.music == "特になし"%>
+              <% favo.music = "" %>
+            <% else %>
+              <% favo.music = "『#{favo.music}』"%>
+            <% end %>
+            <% if favo.user_id == @user.id %>
+              <% favo.music = "" %>
+            <% end %>
+            <p><%= favo.music %></p>
           <% end %>
         <% end %>
       </div>
       <div class="box-5">
-        <p>あなたにおすすめの趣味</p>
+        <p class="per-title">あなたにおすすめの趣味</p>
         <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
           <% @favo_match.each do |favo| %>
-            「<%= favo.hobby %>」
+            <% if favo.hobby == "特になし"%>
+              <% favo.hobby = "" %>
+            <% else %>
+              <% favo.hobby = "『#{favo.hobby}』"%>
+            <% end %>
+            <% if favo.user_id == @user.id %>
+              <% favo.hobby = "" %>
+            <% end %>
+            <p><%= favo.hobby %></p>
           <% end %>
         <% end %>
       </div>
