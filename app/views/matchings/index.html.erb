@@ -74,7 +74,26 @@
   <div class="wrapper">
     <div class='left-bar'>
       <div class='left-cont'>
-
+      <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
+        <%# 外向性 %>
+          <div class='percu-name'><%= current_user.name %></div>
+          <div class='percu-result'>外向性: <%= @curr_cha.extra %> / 12</div>
+          <meter value="<%= @curr_ext %>"></meter>
+        <%# 神経質傾向 %>
+          <div class='percu-result'>神経質傾向: <%= @curr_cha.nervous %> / 12</div>
+          <meter value="<%= @curr_ner %>"></meter>
+        <%# 誠実生 %>
+          <div class='percu-result'>誠実生: <%= @curr_cha.honesty %> / 12</div>
+          <meter value="<%= @curr_hon %>"></meter>
+        <%# 協調性 %>
+          <div class='percu-result'>協調性: <%= @curr_cha.harmony %> / 15</div>
+          <meter value="<%= @curr_har %>"></meter>
+        <%# 挑戦力 %>
+          <div class='percu-result'>挑戦力: <%= @curr_cha.openness %> / 15</div>
+          <meter value="<%= @curr_ope %>"></meter>
+          <div class='tyuui'>※診断結果は100％正確ではありません。</div>
+          <div class='tyuui'>※あくまでも参考程度にご覧ください。</div>
+        <% end %>
       </div>
     </div>
     <div class="personality">
@@ -164,14 +183,22 @@
     </div>
     <div class="right-bar">
       <div class='right-cont'>
-
+        <div>あなたと性格が近しい人</div>
+        <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
+          <% @user_match.each do |user|%>
+            <% if user.id == @user.id %>
+              <% user.name = "" %>
+            <% end %>
+            <p><%= link_to user.name, "#" %></p>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
   <% else %>
   <div class="wrapper">
     <div class='perso-label'>
-      <p class='plz-login'>ログインして全ての機能を開放しよう！
+      <p class='plz-login'>ログインして『あなたにおすすめ』をチェックしよう！
     </div>
     <div class='left-bar'>
       <div class='left-cont'>

@@ -6,6 +6,12 @@ class MatchingsController < ApplicationController
       @user = User.find(current_user.id)
       if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id)
         curr_chara = Character.find_by(user_id: @user.id)
+        @curr_cha = Character.find_by(user_id: @user.id)
+        @curr_ext = curr_chara.extra / 12.to_f
+        @curr_ner = curr_chara.nervous / 12.to_f
+        @curr_hon = curr_chara.honesty / 12.to_f
+        @curr_har = curr_chara.harmony / 15.to_f
+        @curr_ope = curr_chara.openness / 15.to_f
 
         chara_all = Character.all
         chara_match = []
@@ -22,6 +28,11 @@ class MatchingsController < ApplicationController
         @favo_match = []
         chara_match.each do |chara|
           @favo_match << Favorite.find_by(user_id: chara.user_id)
+        end
+
+        @user_match = []
+        chara_match.each do |chara|
+          @user_match << User.find_by(id: chara.user_id)
         end
 
         @character = Character.where(extra: curr_chara.extra)

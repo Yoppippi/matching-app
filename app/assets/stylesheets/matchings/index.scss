@@ -1,6 +1,6 @@
 .main {
   background-color: white;
-  height: 250vh;
+  // height: 240vh;
   background-color: rgb(255, 253, 249);
 }
 
@@ -101,8 +101,8 @@ td {
   width: 80%;
   height: 80%;
   // background-color: tomato;
-  margin: 0px auto;
-  padding-top: 30px;
+  margin: 0 27%;
+  padding-top: 40px;
 }
 
 .kantan {
@@ -116,9 +116,7 @@ td {
 .sin-btn {
   list-style: none;
   display: inline-block;
-  margin-right: 25px;
   text-decoration: none;
-  margin-right: 3vw;
   color: #333333;
   border: black 1px solid;
   border-radius: 5px;
@@ -126,10 +124,11 @@ td {
 }
 
 .kan-btn {
-  padding: 10px 20px;
-  width: 150px;
-  text-align: center;
-  transition: all 0.3s;
+  padding: 4px 20px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.3s;
+    margin: 13px 0 25px 18%;
 
   &:hover {
     background-color: #5B5041;
@@ -139,10 +138,11 @@ td {
 }
 
 .suk-btn {
-  padding: 10px 20px;
-  width: 150px;
-  text-align: center;
-  transition: all 0.3s;
+  padding: 4px 20px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.3s;
+    margin: 13px 0 13px 18%;
 
   &:hover {
     background-color: #5B5041;
@@ -154,6 +154,7 @@ td {
 .wrapper {
   display: flex;
   position: relative;
+  margin-bottom: 25px;
 }
 
 .perso-label {
@@ -181,8 +182,29 @@ td {
 
 .left-cont {
   height: 100%;
-  background-color:rgb(225, 243, 189);
+  background-color:rgb(235, 250, 207);
   width: 80%;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+meter {
+  width: 200px;
+  height: 20px;
+  margin-bottom: 25px;
+}
+
+.tyuui {
+  font-size: 0.9rem;
+}
+
+.percu-result {
+  font-size: 1.3rem;
+}
+
+.percu-name {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
 }
 
 .personality {
@@ -192,10 +214,12 @@ td {
   flex-wrap: wrap;
 
   & div {
-    background-color: rgb(206, 236, 248);
+    background-color: rgb(215, 239, 248);
     height: 30%;
     width: 45%;
     margin: 10px auto;
+    border-radius: 20px;
+    padding: 7px;
   }
 }
 
@@ -214,8 +238,10 @@ td {
 
 .right-cont {
   height: 100%;
-  background-color:rgb(225, 243, 189);
+  background-color:rgb(235, 250, 207);
   width: 80%;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 

@@ -174,7 +174,7 @@ function character() {
           scoreLabel.innerHTML = `外向性: ${extraScore} / 10 </br>
                                   神経質傾向: ${nervousScore} / 10 </br>
                                   誠実性: ${honestyScore} / 10 </br>
-                                  調和性: ${harmonyScore} / 15 </br>
+                                  協調性: ${harmonyScore} / 15 </br>
                                   挑戦力: ${opennessScore} / 15 </br>`;
           extra.setAttribute("value", extraScore)
           nervous.setAttribute("value", nervousScore) 
