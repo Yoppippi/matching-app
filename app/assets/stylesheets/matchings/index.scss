@@ -1,6 +1,6 @@
 .main {
   background-color: white;
-  // height: 240vh;
+  // width: 120vw;
   background-color: rgb(255, 253, 249);
 }
 
@@ -128,7 +128,7 @@ td {
     width: 200px;
     text-align: center;
     transition: all 0.3s;
-    margin: 13px 0 25px 18%;
+    margin: 13px 0 25px 20%;
 
   &:hover {
     background-color: #5B5041;
@@ -142,7 +142,7 @@ td {
     width: 200px;
     text-align: center;
     transition: all 0.3s;
-    margin: 13px 0 13px 18%;
+    margin: 13px 0 13px 20%;
 
   &:hover {
     background-color: #5B5041;
@@ -214,13 +214,22 @@ meter {
   flex-wrap: wrap;
 
   & div {
-    background-color: rgb(215, 239, 248);
+    background-color: rgb(229, 246, 252);
     height: 30%;
     width: 45%;
     margin: 10px auto;
     border-radius: 20px;
     padding: 7px;
   }
+}
+
+.tikashi {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+
+.favo-link {
+  text-decoration: none;
 }
 
 .per-title {
@@ -242,6 +251,12 @@ meter {
   width: 80%;
   padding: 20px;
   border-radius: 20px;
+}
+
+.mause-name {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-decoration: none;
 }
 
 

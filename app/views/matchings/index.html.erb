@@ -64,9 +64,9 @@
   </div>
   <div class='character'>
     <div class="chara-box">
-      <p class='kantan'>簡単な質問に答えて、自分と似ている仲間を見つけよう！</p>
+      <p class='kantan'>まずは簡単な質問に答えて、自分と似ている仲間を見つけよう！</p>
       <%= link_to 'スタート', new_character_path, class: "kan-btn sin-btn" ,data: {"turbolinks" => false} %>
-      <p class='sukina'>あなたの好きなものについて聞かせてください！</p>
+      <p class='sukina'>次にあなたの好きなものについて聞かせてください！</p>
       <%= link_to 'スタート', new_favorite_path, class: "suk-btn sin-btn" ,data: {"turbolinks" => false} %>
     </div>
   </div>
@@ -77,13 +77,13 @@
       <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
         <%# 外向性 %>
           <div class='percu-name'><%= current_user.name %></div>
-          <div class='percu-result'>外向性: <%= @curr_cha.extra %> / 12</div>
+          <div class='percu-result'>外向性: <%= @curr_cha.extra %> / 10</div>
           <meter value="<%= @curr_ext %>"></meter>
         <%# 神経質傾向 %>
-          <div class='percu-result'>神経質傾向: <%= @curr_cha.nervous %> / 12</div>
+          <div class='percu-result'>神経質傾向: <%= @curr_cha.nervous %> / 10</div>
           <meter value="<%= @curr_ner %>"></meter>
         <%# 誠実生 %>
-          <div class='percu-result'>誠実生: <%= @curr_cha.honesty %> / 12</div>
+          <div class='percu-result'>誠実生: <%= @curr_cha.honesty %> / 10</div>
           <meter value="<%= @curr_hon %>"></meter>
         <%# 協調性 %>
           <div class='percu-result'>協調性: <%= @curr_cha.harmony %> / 15</div>
@@ -93,6 +93,8 @@
           <meter value="<%= @curr_ope %>"></meter>
           <div class='tyuui'>※診断結果は100％正確ではありません。</div>
           <div class='tyuui'>※あくまでも参考程度にご覧ください。</div>
+        <% else %>
+          <p class='tikashi'>あなたのプロフィール</p>
         <% end %>
       </div>
     </div>
@@ -109,7 +111,7 @@
             <% if favo.user_id == @user.id %>
               <% favo.novel = "" %>
             <% end %>
-            <p><%= favo.novel %></p>
+            <p><%= link_to favo.novel, "https://www.google.com/search?q=#{favo.novel}", class: "favo-link" %></p>
           <% end %>
         <% end %>
       </div>
@@ -125,7 +127,7 @@
             <% if favo.user_id == @user.id %>
               <% favo.comic = "" %>
             <% end %>
-            <p><%= favo.comic %></p>
+            <p><%= link_to favo.comic, "https://www.google.com/search?q=#{favo.comic}", class: "favo-link" %></p>
           <% end %>
         <% end %>
       </div>
@@ -141,7 +143,7 @@
             <% if favo.user_id == @user.id %>
               <% favo.movie = "" %>
             <% end %>
-            <p><%= favo.movie %></p>
+            <p><%= link_to favo.movie, "https://www.google.com/search?q=#{favo.movie}", class: "favo-link" %></p>
           <% end %>
         <% end %>
       </div>
@@ -157,7 +159,7 @@
             <% if favo.user_id == @user.id %>
               <% favo.music = "" %>
             <% end %>
-            <p><%= favo.music %></p>
+            <p><%= link_to favo.music, "https://www.google.com/search?q=#{favo.music}", class: "favo-link" %></p>
           <% end %>
         <% end %>
       </div>
@@ -173,7 +175,7 @@
             <% if favo.user_id == @user.id %>
               <% favo.hobby = "" %>
             <% end %>
-            <p><%= favo.hobby %></p>
+            <p><%= link_to favo.hobby, "https://www.google.com/search?q=#{favo.hobby}", class: "favo-link" %></p>
           <% end %>
         <% end %>
       </div>
@@ -183,13 +185,15 @@
     </div>
     <div class="right-bar">
       <div class='right-cont'>
-        <div>あなたと性格が近しい人</div>
+        <div class='tikashi'>あなたと性格が近しい人</div>
         <% if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id) %>
           <% @user_match.each do |user|%>
             <% if user.id == @user.id %>
               <% user.name = "" %>
+            <% else %>
+              <% user.name = user.name + 'さん' %>
             <% end %>
-            <p><%= link_to user.name, "#" %></p>
+            <p class='mause-name'><%= link_to user.name, "#", data: {"turbolinks" => false}, class: "" %></p>
           <% end %>
         <% end %>
       </div>
@@ -202,7 +206,7 @@
     </div>
     <div class='left-bar'>
       <div class='left-cont'>
-
+        <p class='tikashi'>あなたのプロフィール</p>
       </div>
     </div>
     <div class="personality">
@@ -227,7 +231,7 @@
     </div>
     <div class="right-bar">
       <div class='right-cont'>
-
+        <p class='tikashi'>あなたと性格が近しい人</p>
       </div>
     </div>
   </div>

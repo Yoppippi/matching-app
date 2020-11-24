@@ -124,7 +124,7 @@ td {
   text-align: center;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  margin: 13px 0 25px 18%;
+  margin: 13px 0 25px 20%;
 }
 
 .kan-btn:hover {
@@ -140,7 +140,7 @@ td {
   text-align: center;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  margin: 13px 0 13px 18%;
+  margin: 13px 0 13px 20%;
 }
 
 .suk-btn:hover {
@@ -223,12 +223,21 @@ meter {
 }
 
 .personality div {
-  background-color: #d7eff8;
+  background-color: #e5f6fc;
   height: 30%;
   width: 45%;
   margin: 10px auto;
   border-radius: 20px;
   padding: 7px;
+}
+
+.tikashi {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+
+.favo-link {
+  text-decoration: none;
 }
 
 .per-title {
@@ -254,5 +263,11 @@ meter {
   width: 80%;
   padding: 20px;
   border-radius: 20px;
+}
+
+.mause-name {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-decoration: none;
 }
 /*# sourceMappingURL=index.css.map */

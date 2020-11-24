@@ -7,9 +7,9 @@ class MatchingsController < ApplicationController
       if Character.exists?(user_id: @user.id) && Favorite.exists?(user_id: @user.id)
         curr_chara = Character.find_by(user_id: @user.id)
         @curr_cha = Character.find_by(user_id: @user.id)
-        @curr_ext = curr_chara.extra / 12.to_f
-        @curr_ner = curr_chara.nervous / 12.to_f
-        @curr_hon = curr_chara.honesty / 12.to_f
+        @curr_ext = curr_chara.extra / 10.to_f
+        @curr_ner = curr_chara.nervous / 10.to_f
+        @curr_hon = curr_chara.honesty / 10.to_f
         @curr_har = curr_chara.harmony / 15.to_f
         @curr_ope = curr_chara.openness / 15.to_f
 
