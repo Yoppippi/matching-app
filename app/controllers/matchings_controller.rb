@@ -40,4 +40,7 @@ class MatchingsController < ApplicationController
       end
     end
   end
+
+  def update
+  end
 end
